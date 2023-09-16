@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checklist</title>
+    <link rel="icon" href="/static/assets/checklist_icon.png">
+    <link rel="stylesheet" href="/static/styles/globals.css">
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend Deca">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito Sans">
+    <script src="/static/scripts/signon.js"></script>
+  </head>
+  <body class="centered-children login-background">
+    <div class="form">
+      <div class="title" id="signonTitle">Welcome Back!</div>
+      <div class="subtitle" id="signonSubtitle">Enter your username and password</div>
+      <div class="break"></div>
+      <button class="centered-children google-signin" onclick="window.location.href='google/'">
+        <img class="google-icon" src="/static/assets/icon_google.png">
+        <span id="googlePrompt">Signin with Google</span>
+      </button>
+      <input id="username" style="width: 25em; margin-bottom: 0.3em" type="text" autocomplete="off" spellcheck="false" placeholder="Username">
+      <input id="password" style="width: 25em" type="password" autocomplete="off" spellcheck="false" placeholder="Password">
+      <div id="passwordToggle" class="footer" style="color: var(--accent); cursor: pointer" onclick="togglePassword()">Show password</div>
+      <div class="break"></div>
+      <button id="actionButton" style="margin-bottom: 0.5em" onclick="action('login')">Login</button>
+      <div class="footer" id="footer">No account? <a onclick="toggleType()">Signup</a></div>
+    </div>
+  </body>
+</html>

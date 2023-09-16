@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checklist | Active</title>
+    <link rel="icon" href="/static/assets/checklist_icon.png">
+    <link rel="stylesheet" href="/static/styles/globals.css">
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lexend Deca">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira Code">
+    <script src="/static/scripts/modals.js"></script>
+    <script src="/static/scripts/events.js"></script>
+    <script src="/static/scripts/query.js"></script>
+    <script>
+      window.onload = function() {
+        fetchTasks("completed")
+          .then(tasks => {
+            renderTasks(tasks, true)
+          })
+      }
+    </script>
+  </head>
+  <body class="centered-children" style="padding: 2em; box-sizing: border-box;">
+    <div class="error-modal centered-children" style="display: none">
+      <img src="/static/assets/icon_error.png">
+      <span id="errorText">An error occurred!</span>
+      <span class="error-modal-close" onclick="closeError(0)">x</span>
+    </div>
+    <div class="error-modal success-modal centered-children" style="display: none">
+      <img src="/static/assets/icon_success.png">
+      <span id="successText">Success!</span>
+      <span class="error-modal-close success-modal-close" onclick="closeError(1)">x</span>
+    </div>
+    <div class="content">
+      <div>
+        <div class="title-container centered-vertically" style="grid-template-columns: 1fr auto">
+          <div style="font-size: 2.2em">Active tasks</div>
+          <button class="logout-button" onclick='window.location.href="/logout"'>Logout</button>
+        </div>
+        <div class="break"></div>
+        <div class="centered-vertically" style="position: relative">
+          <button class="selection-button" style="margin-right: 0.5em" onclick="window.location.href='/tasks/active'">Active</button>
+          <button class="selection-button" style="border-color: var(--accent) !important" onclick="window.location.href='/tasks/completed'">Completed</button>
+          <div class="group-refresh-button" onclick="fetchTasks('completed').then(tasks => {renderTasks(tasks, true)})" title="Refresh tasks">
+            <img src="/static/assets/icon_refresh.png">
+          </div>
+        </div>
+        <div class="break"></div>
+      </div>
+      <div class="tasks-container">
+        <div id="importantTasks"></div>
+        <div id="regularTasks"></div>
+      </div>
+    </div>
+  </body>
+</html>

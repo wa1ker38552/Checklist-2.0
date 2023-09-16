@@ -1,0 +1,489 @@
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  font-family: "Lexend Deca";
+  color: var(--color);
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button:not(.google-signin, .config-button, .settings-button, .close-button) {
+  cursor: pointer;
+  color: #ffffff;
+  padding: 0.2em 1em 0.2em 1em;
+  border-color: var(--accent-heavy);
+  background: var(--accent);
+}
+
+button:hover:not(.config-button, .google-signin, .settings-button, .close-button) {
+  background: var(--accent-light);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+input, .google-signin, button {
+  border-style: solid;
+  border-color: var(--border);
+  border-width: 2px;
+  border-radius: 4px;
+  font-size: 1.2em;
+  font-family: "Nunito Sans";
+  transition: 0.3s ease-in-out;
+}
+
+input {
+  outline: 0;
+  padding: 0.2em;
+  box-sizing: border-box;
+  display: block;
+}
+
+input:focus {
+  border-color: var(--accent);
+}
+
+input[type="color"] {
+  cursor: pointer;
+  background: transparent;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--border);
+  padding: 0;
+  height: 100%;
+  width: 1.8em;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::-webkit-color-swatch{
+  border: 0;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.centered-children, .centered-vertically {
+  display: flex;
+}
+
+.centered-children, .centered-vertically {
+  align-items: center;
+}
+
+.centered-children {
+  justify-content: center;
+}
+
+.form {
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 12px var(--shadow);
+  padding: 1em;
+  background: #ffffff;
+}
+
+.title {
+  font-size: 1.8em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+}
+
+.login-background {
+  background-image: radial-gradient(var(--shadow) 1.8px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
+}
+
+.break {
+  margin-bottom: 1em;
+}
+
+.smallbreak {
+  margin-bottom: 0.5em;
+}
+
+.google-icon {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 0.5em;
+}
+
+.google-signin {
+  background: transparent;
+  width: 25em;
+  margin-bottom: 0.5em;
+  padding: 0.3em;
+  cursor: pointer;
+}
+
+.google-signin:hover {
+  background: var(--shadow);
+}
+
+.footer {
+  font-size: 1em;
+}
+
+.content {
+  width: 60em;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* css being weird af */
+.selection-button {
+  background: var(--shadow) !important;
+  border-color: var(--border) !important;
+  color: var(--color) !important;
+  padding-top: 0.2em !important;
+  padding-bottom: 0.2em !important;
+  font-size: 1em !important;
+}
+
+.selection-button:hover {
+  background: var(--shadow-heavy) !important;
+}
+
+.modal-background {
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.modal {
+  width: 35em;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 1em;
+}
+
+.groups-container {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+  color: var(--border);
+  border-radius: 4px;
+  border-color: var(--border);
+  border-width: 2px;
+  border-style: solid;
+  display: flex;
+  gap: 0.5em;
+  flex-wrap: wrap;
+}
+
+.group-input {
+  margin-bottom: 0.2em;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 0.5em;
+}
+
+#groupNameCounter, #taskNameCounter, #editTaskNameCounter { 
+  color: var(--border);
+  font-family: "Fira Code";
+}
+
+.cancel-button {
+  border-color: var(--border) !important;
+  background: #ffffff !important;
+  color: var(--color) !important;
+}
+
+.cancel-button:hover {
+  background: var(--shadow) !important;
+}
+
+.group {
+  padding: 0.1em 0.5em 0.1em 0.5em;
+  color: var(--color);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--border);
+  font-size: 1.2em;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 0.3em;
+  font-family: "Nunito Sans";
+}
+
+.group-color {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+}
+
+.group-delete:hover {
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  color: red;
+}
+
+#groupCreationError, #taskCreationError, #editTaskCreationError {
+  position: absolute;
+  right: 0;
+  color: red;
+  font-family: "Fira Code";
+}
+
+.group-refresh-button {
+  border-radius: 4px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--border);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  height: auto;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.group-refresh-button:hover {
+  background: var(--shadow);
+}
+
+.group-refresh-button img {
+  filter: invert(72%) sepia(0%) saturate(367%) hue-rotate(175deg) brightness(94%) contrast(86%);
+}
+
+.selectedGroup {
+  background: var(--shadow-heavy);
+  transition: 0.2s ease-in-out;
+}
+
+#starTask, #editTaskStar {
+  cursor: pointer;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--border);
+  height: 100%;
+  width: 2.2em;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#starTask img, #editTaskStar img {
+  filter: invert(72%) sepia(0%) saturate(367%) hue-rotate(175deg) brightness(94%) contrast(86%);
+}
+
+.filled-star {
+  filter: invert(92%) sepia(20%) saturate(7479%) hue-rotate(360deg) brightness(105%) contrast(106%) !important;
+}
+
+.task {
+  width: 100%;
+  height: auto;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 2px 2px 2px 8px;
+  border-image: linear-gradient(to right, var(--border), var(--border)) 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.task-group {
+  font-size: 1em;
+  font-family: "Nunito Sans";
+}
+
+.task-title {
+  font-size: 1.3em;
+}
+
+.config-button img {
+  filter: invert(25%) sepia(99%) saturate(0%) hue-rotate(294deg) brightness(94%) contrast(86%);
+}
+
+.config-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  border-style: none;
+  background: transparent;
+  transition: 0.3s ease-in-out;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.config-button:hover {
+  background: var(--shadow-heavy);
+}
+
+#importantTasks, #regularTasks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.tasks-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.2em 0.5em 0.2em 0;
+}
+
+.title-container {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-gap: 0.5em;
+}
+
+.logout-button {
+  height: auto;
+  font-size: 1em;
+}
+
+.close-button {
+  padding: 0.2em;
+  border-radius: 50%;
+}
+
+.close-button:hover {
+  background: var(--shadow-heavy);
+}
+
+.settings-button {
+  background: transparent;
+  border-style: none;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.settings-button:hover:not(.close-button) {
+  transform: rotate(90deg);
+}
+
+.settings-button img {
+  width: 1.5em;
+  height: 1.5em;
+  filter: invert(25%) sepia(99%) saturate(0%) hue-rotate(294deg) brightness(94%) contrast(86%);
+}
+
+.export-img {
+  width: 1.2em; 
+  height: 1.2em; 
+  margin-right: 0.5em;
+  filter: invert(25%) sepia(99%) saturate(0%) hue-rotate(294deg) brightness(94%) contrast(86%);
+}
+
+.destructive-button {
+  color: #ffffff !important;
+  border-color: red !important;
+  background: #ff9393 !important;
+  font-size: 1em;
+}
+
+.destructive-button:hover {
+  filter: brightness(1.2) !important;
+}
+
+.settings-container {
+  height:18em;
+  overflow: auto;
+}
+
+.settings-container::-webkit-scrollbar {
+  display: none;
+}
+
+.error-modal {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  width: auto;
+  padding: 0.2em 0.5em 0.2em 0.2em;
+  border-radius: 6px;
+  border-color: red;
+  background: #ff9e9e;
+  color: #ffffff;
+  font-size: 1em;
+  border-style: solid;
+  border-width: 2px;
+  z-index: 10000;
+}
+
+.error-modal-close {
+  font-family: 'Fira Code'; 
+  cursor: pointer; 
+  margin-left: 0.5em;
+  transition: 0.3s ease-in-out;
+  color: red;
+}
+
+.error-modal-close:hover {
+  color: white;
+}
+
+.success-modal-close {
+  color: green;
+}
+
+.success-modal-close:hover {
+ color: var(--color);
+}
+
+.success-modal {
+  background: #a5ff9e; 
+  border-color: green; 
+  color: var(--color);
+  z-index: 10000;
+}
+
+.error-modal img {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+  filter: invert(15%) sepia(94%) saturate(6912%) hue-rotate(3deg) brightness(101%) contrast(116%);
+}
+
+.success-modal img {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+  filter: invert(13%) sepia(97%) saturate(7500%) hue-rotate(139deg) brightness(102%) contrast(101%);
+}
