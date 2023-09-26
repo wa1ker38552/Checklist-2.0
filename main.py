@@ -21,6 +21,10 @@ def app_index():
     return flask.redirect('/tasks/active')
   return flask.render_template('login.html')
 
+@app.route('/ping')
+def app_ping():
+  return '<script>window.onload = setInterval(async function() {await fetch("/ping")}, 30000)</script>'
+
 @app.route('/tasks/active')
 def app_tasks_active():
   if is_authenticated(flask.request, db):

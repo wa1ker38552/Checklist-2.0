@@ -232,17 +232,17 @@ function eventSetup() {
   window.onclick = function(e) {
     // i should probably fix this so it targets class instead :\
     if (e.target == document.querySelector("#groupManagerModal")) {
-      document.querySelector("#groupManagerModal").style.display = "none"
+      closeGroupModal()
     } else if (e.target == document.querySelector("#createTaskModal")) {
-      document.querySelector("#createTaskModal").style.display = "none"
+      closeTaskModal()
     } else if (e.target == document.querySelector("#settingsModal")) {
-      document.querySelector("#settingsModal").style.display = "none"
+      closeSettingsModal()
     } else if (e.target == document.querySelector("#confirmationModal")) {
       document.querySelector("#confirmationModal").children[0].style.borderColor = "red"
       document.querySelector("#confirmationModal").children[0].style.borderStyle = "solid"
       document.querySelector("#confirmationModal").children[0].style.borderWidth = "2px"
     } else if (e.target == document.querySelector("#editTaskModal")) {
-      document.querySelector("#editTaskModal").style.display = "none"
+      closeEditTaskModal()
     }
   }
 }

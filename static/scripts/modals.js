@@ -1,40 +1,58 @@
+// asume the modal is the first child of modal background
+function animateModalOpen(m) {
+  m.style.display = ""
+  m.style.opacity = "1"
+  m.style.background = "rgba(0, 0, 0, 0.7)"
+  m.style.animation = "fade-in 0.3s"
+  m.children[0].style.animation = "move-up 0.3s"
+}
+
+function animateModalClose(m) {
+  setTimeout(function() {
+    m.style.display = "none"
+  }, 301)
+  m.children[0].style.animation = "move-down 0.3s"
+  m.style.animation = "fade-out 0.3s"
+  m.style.opacity = 0
+}
+
 // Toggles the group manager modal
 function openGroupModal() {
-  document.getElementById("groupManagerModal").style.display = ""
+  animateModalOpen(document.getElementById("groupManagerModal"))
   document.getElementById("groupName").focus()
 }
 
 function closeGroupModal() {
-  document.getElementById("groupManagerModal").style.display = "none"
+  animateModalClose(document.getElementById("groupManagerModal"))
 }
 
 // Toggles the task creation modal
 function openTaskModal() {
-  document.getElementById("createTaskModal").style.display = ""
+  animateModalOpen(document.getElementById("createTaskModal"))
   document.getElementById("taskName").focus()
 }
 
 function closeTaskModal() {
-  document.getElementById("createTaskModal").style.display = "none"
+  animateModalClose(document.getElementById("createTaskModal"))
 }
 
 // Toggles setting modal
 function openSettingsModal() {
-  document.getElementById("settingsModal").style.display = ""
+  animateModalOpen(document.getElementById("settingsModal"))
 }
 
 function closeSettingsModal() {
-  document.getElementById("settingsModal").style.display = "none"
+  animateModalClose(document.getElementById("settingsModal"))
 }
 
 // Toggles confirmation modal (this modal can't be closed by clicking background. DONE ON PURPOSE)
 function openConfirmationModal() {
   document.getElementById("confirmationModal").children[0].style.borderColor = "transparent"
-  document.getElementById("confirmationModal").style.display = ""
+  animateModalOpen(document.getElementById("confirmationModal"))
 }
 
 function closeConfirmationModal() {
-  document.getElementById("confirmationModal").style.display = "none"
+  animateModalClose(document.getElementById("confirmationModal"))
 }
 
 //toggles edit task modal
@@ -45,9 +63,9 @@ async function openEditTaskModal() {
     child.src = "/static/assets/icon_star.png"
     child.classList.remove("filled-star")
   }
-  document.getElementById("editTaskModal").style.display = ""
+  animateModalOpen(document.getElementById("editTaskModal"))
 }
 
 function closeEditTaskModal() {
-  document.getElementById("editTaskModal").style.display = "none"
+  animateModalClose(document.getElementById("editTaskModal"))
 }

@@ -183,12 +183,13 @@ input[type="color"] {
 
 .modal-background {
   z-index: 9999;
-  background: rgba(0, 0, 0, 0.7);
   width: 100vw;
   height: 100vh;
   position: absolute;
   left: 0;
   top: 0;
+  overflow: hidden;
+  opacity: 0;
 }
 
 .modal {
